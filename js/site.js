@@ -20,6 +20,11 @@ function validaFaleConosco() {
         document.getElementById("motivo").focus();
         return false;
     }
+    if (document.getElementById("produtoOpcao").value == "") {
+        alert("Preencha o campo Opção Produto");
+        document.getElementById("produtoOpcao").focus();
+        return false;
+    }
     if (document.getElementById("comentario").value == "") {
         alert("O campo Comentário deve ter pelo menos 1 caractere e no máximo 500 caracteres");
         document.getElementById("comentario").focus();
@@ -36,7 +41,8 @@ function verificaMotivo(motivo) {
         var select = document.createElement("select");
         // Setamos nesse novo select o atributo "name" com o valor "selproduto"
         select.setAttribute("name", "selproduto");
-
+        select.setAttribute("id", "produtoOpcao");
+      
         //Criamos um elemento (tag) <option> e guardamos na variável homônima
         var option = document.createElement("option");
         //Setamos nesse novo option o atributo 'value' com o valor vazio
@@ -98,11 +104,13 @@ function verificaMotivo(motivo) {
         //Se o valor da variavel motivo nao for "PR" ...
     } else {
         //Se a div possuir algum "primeiro filho"
-        if (elemento.firstChild)
+        if (elemento.firstChild){
+        
             //Removemos ele
             elemento.removeChild(elemento.firstChild);
-
+        }
         1//fim da funcão verificaMotivo
+        
     }
 
 }
