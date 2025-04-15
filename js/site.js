@@ -1,11 +1,17 @@
 function validaFaleConosco() {
-    if (document.getElementById("nome").value == "") {
-        alert("Preencha o campo Nome");
+   
+   var nome = document.getElementById("nome").value;
+    var expRegNome = /^[A-zA-u]{3,}([ ]{1}[A-zÀ-ü]{2,})+$/;
+   
+    if (!expRegNome.test(nome)) {
+        alert("Preencha o campo Nome corretamente");
         document.getElementById("nome").focus();
         return false;
     }
 
-    if (document.getElementById("fone").value == "") {
+    var fone = document.getElementById("fone").value;
+    var expRegFone = /^[(]{1}[1-9]{2}[)]{1}[0-9]{4,5}[-]{1}[0-9]{4}$/;
+    if (!expRegFone.test(fone)) {
         alert("Preencha o campo Telefone");
         document.getElementById("fone").focus();
         return false;
@@ -26,7 +32,7 @@ function validaFaleConosco() {
         return false;
     }
     if (document.getElementById("comentario").value == "") {
-        alert("O campo Comentário deve ter pelo menos 1 caractere e no máximo 500 caracteres");
+        alert("Preencha o campo Comentário");
         document.getElementById("comentario").focus();
         return false;
     }
