@@ -1,8 +1,8 @@
 function validaFaleConosco() {
-   
-   var nome = document.getElementById("nome").value;
+
+    var nome = document.getElementById("nome").value;
     var expRegNome = /^[A-zA-u]{3,}([ ]{1}[A-zÀ-ü]{2,})+$/;
-   
+
     if (!expRegNome.test(nome)) {
         alert("Preencha o campo Nome corretamente");
         document.getElementById("nome").focus();
@@ -39,6 +39,7 @@ function validaFaleConosco() {
 
     return true;
 }
+
 function verificaMotivo(motivo) {
     var elemento = document.getElementById("opcaoProduto");
 
@@ -48,7 +49,7 @@ function verificaMotivo(motivo) {
         // Setamos nesse novo select o atributo "name" com o valor "selproduto"
         select.setAttribute("name", "selproduto");
         select.setAttribute("id", "produtoOpcao");
-      
+
         //Criamos um elemento (tag) <option> e guardamos na variável homônima
         var option = document.createElement("option");
         //Setamos nesse novo option o atributo 'value' com o valor vazio
@@ -110,13 +111,19 @@ function verificaMotivo(motivo) {
         //Se o valor da variavel motivo nao for "PR" ...
     } else {
         //Se a div possuir algum "primeiro filho"
-        if (elemento.firstChild){
-        
+        if (elemento.firstChild) {
+
             //Removemos ele
             elemento.removeChild(elemento.firstChild);
         }
         1//fim da funcão verificaMotivo
-        
+
     }
 
 }
+
+$(document).ready(function ($) {
+    $("header").load("/pages/sites/general/cabecalho.html");
+    $("nav").load("/pages/sites/general/menu.html");
+    $("footer").load("/pages/sites/general/rodape.html");
+});
