@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
 body {
     margin: 0 auto;
     font-family: "Century Gothic", sans-serif;
@@ -30,25 +35,35 @@ header h1 {
 
 /*MENU*/
 nav {
-    clear: both;
-    width: 80%;
-    margin: 0 auto;
-    height: 55px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+nav div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
 
 nav a {
     color: white;
     text-decoration: none;
-    text-align: center;
+    flex-wrap: nowrap;
 }
 
 nav .opcao {
-    float: left;
-    width: 31.3%;
+
     background-color: #b1ccf5;
     padding: 10px 0;
-    margin: 0 1%;
-    font-size: 26px;
+    margin: 0 15px;
+    font-size: 1.5em;
+    flex: 1 1 150px;
+    white-space: nowrap;
+    text-align: center;
 }
 
 nav .opcao:hover {
@@ -74,9 +89,10 @@ footer {
 /* Configuração da página inicial */
 
 section #topo {
-    width: 900px;
-    margin: 0px auto;
-    height: 250px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 35px auto;
 }
 
 .geladeira {
@@ -186,3 +202,44 @@ tr:nth-child(odd) {
     font-size: 16px;
 }
 
+@media screen  and (max-width: 900px) {
+   
+    .geladeira {
+        display: none;
+    }
+    header img {
+       display: none;
+    }
+    header{
+        height: 130px;
+        background-color: #008eb6;
+    }
+    header h1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40%;
+        width: 100%;
+        color: #ffffff;
+        font-size: 30px;
+        margin: 35px auto;
+    }
+
+
+    section p{
+        text-align: left;
+        clear: both;
+        text-align: left;
+    }
+
+    nav .opcao {
+        background-color: #b1ccf5;
+        font-size: 15px;
+        width: 20%;
+    }
+
+    h2{
+        text-align: center;
+        font-size: 40px;
+    }
+}
